@@ -75,13 +75,13 @@ at a</panel_attributes>
     <coordinates>
       <x>520</x>
       <y>170</y>
-      <w>80</w>
+      <w>250</w>
       <h>310</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1..n
-displays</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
+    <panel_attributes>lt=-&gt;
+m2=1
+belongs to</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;290.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
