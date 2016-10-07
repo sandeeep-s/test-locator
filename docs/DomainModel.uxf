@@ -9,7 +9,8 @@
       <w>130</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>Item</panel_attributes>
+    <panel_attributes>Item
+&lt;Entity&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -42,7 +43,8 @@
       <w>130</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>Store</panel_attributes>
+    <panel_attributes>Store
+&lt;Entity&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -66,7 +68,7 @@
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
-is displayed
+is stored
 at a</panel_attributes>
     <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
   </element>

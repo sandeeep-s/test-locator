@@ -1,35 +1,23 @@
 package com.example.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Item {
+public class Section {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-
-	private String name;
 	
-	private String code;
-
-	protected Item() {
-
-	}
-
-	public Item(String name) {
-		this.name = name;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
+	private Long name;
+	
+	@ManyToOne
+	private Store store;
+	
 }
