@@ -1,5 +1,7 @@
 package com.example.model;
 
-public interface StoreRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface StoreRepository extends CrudRepository<Store, Long>{
 
 }

@@ -9,6 +9,11 @@ import org.springframework.context.annotation.Bean;
 
 import com.example.model.Item;
 import com.example.model.ItemRepository;
+import com.example.model.ItemSection;
+import com.example.model.ItemSectionRepository;
+import com.example.model.Section;
+import com.example.model.Store;
+import com.example.model.StoreRepository;
 
 @SpringBootApplication
 public class Application {
@@ -22,11 +27,19 @@ public class Application {
 	}
 
 	@Bean
-	public CommandLineRunner demo(ItemRepository repository) {
+	public CommandLineRunner demo(ItemRepository itemRepository, StoreRepository storeRepository, ItemSectionRepository itemSectionRepository) {
 		return (args) -> {
-			repository.save(new Item("testItem"));
+			itemRepository.save(new Item("testItem"));
+		
+			Store store = new Store("testStore");
+			store .getSections().add(new Section("S1"));
+			storeRepository.save(new Store("testStore"));
 			
-			for (Item item: repository.findAll()) {
+			
+			
+			
+			for (Item item: itemRepository.findAll()) {
+				
 				log.info(item.getName());
 			}
 		};
