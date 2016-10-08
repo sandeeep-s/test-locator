@@ -1,6 +1,7 @@
 package com.example.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,19 +15,19 @@ public class ItemSection {
 	private Long id;
 
 	@ManyToOne
+	private Item item;
+
+	@ManyToOne
 	private Store store;
 
 	@ManyToOne
 	private Section section;
 
-	@ManyToOne
-	private Item item;
-
 	ItemSection() {
 
 	}
 
-	public ItemSection(Store store, Section section, Item item) {
+	public ItemSection(Item item, Store store, Section section) {
 		this.store = store;
 		this.section = section;
 		this.item = item;
@@ -55,7 +56,5 @@ public class ItemSection {
 	public void setItem(Item item) {
 		this.item = item;
 	}
-	
-	
 
 }
