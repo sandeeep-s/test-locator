@@ -29,7 +29,7 @@ public class Application {
 	public CommandLineRunner demo(ItemRepository itemRepository, StoreRepository storeRepository,
 			ItemSectionRepository itemSectionRepository) {
 		return (args) -> {
-			itemRepository.save(new Item("testItem"));
+			itemRepository.save(new Item("testItem", "testItemCode"));
 
 			Store store = new Store("testStore");
 			store.addSection(new Section("S1"));
