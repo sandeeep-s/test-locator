@@ -5,12 +5,18 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@NoArgsConstructor
 public class Store {
 
 	@Id
@@ -19,44 +25,11 @@ public class Store {
 
 	private String name;
 
-	@OneToMany(mappedBy = "store", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "store", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	private List<Section> sections = new ArrayList<Section>();
 
-	protected Store() {
-
-	}
-
-	public Store(String name) {
+	public Store(String name){
 		this.name = name;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public List<Section> getSections() {
-		return sections;
-	}
-
-	public Section getSectionByName(String name) {
-		for (Section section : sections) {
-			if (name.equalsIgnoreCase(section.getName())) {
-				return section;
-			}
-		}
-		return null;
-	}
-
-	public void addSection(Section section) {
-
-		if (null != section) {
-			section.setStore(this);
-			sections.add(section);
-		}
-	}
-
+	
 }

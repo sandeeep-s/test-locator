@@ -29,21 +29,6 @@ public class Application {
 	public CommandLineRunner demo(ItemRepository itemRepository, StoreRepository storeRepository,
 			ItemSectionRepository itemSectionRepository) {
 		return (args) -> {
-			itemRepository.save(new Item("testItem", "testItemCode"));
-
-			Store store = new Store("testStore");
-			store.addSection(new Section("S1"));
-			storeRepository.save(store);
-
-			Item testItem = itemRepository.findByName("testItem");
-			Store testStore = storeRepository.findByName("testStore");
-			Section testSection = store.getSectionByName("S1");
-
-			itemSectionRepository.save(new ItemSection(testItem, testStore, testSection));
-
-			ItemSection testItemSection = itemSectionRepository.findByStoreAndItem(testStore, testItem);
-			
-			log.info("testItemSection name="+testItemSection.getSection().getName());
 			
 		};
 	}

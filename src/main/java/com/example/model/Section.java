@@ -6,7 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@NoArgsConstructor
 public class Section {
 
 	@Id
@@ -17,31 +22,5 @@ public class Section {
 	
 	@ManyToOne
 	private Store store;
-	
-	Section(){
-		
-	}
-	
-	public Section(String name){
-		this.name = name;
-	}
-
-	public Store getStore() {
-		return store;
-	}
-
-	public void setStore(Store store) {
-		this.store = store;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
 	
 }

@@ -6,7 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@NoArgsConstructor
 public class ItemSection {
 
 	@Id
@@ -17,42 +22,10 @@ public class ItemSection {
 	private Item item;
 
 	@ManyToOne
-	private Store store;
-
-	@ManyToOne
 	private Section section;
 
-	ItemSection() {
-
-	}
-
-	public ItemSection(Item item, Store store, Section section) {
-		this.store = store;
+	public ItemSection(Item item, Section section) {
 		this.section = section;
-		this.item = item;
-	}
-
-	public Store getStore() {
-		return store;
-	}
-
-	public void setStore(Store store) {
-		this.store = store;
-	}
-
-	public Section getSection() {
-		return section;
-	}
-
-	public void setSection(Section section) {
-		this.section = section;
-	}
-
-	public Item getItem() {
-		return item;
-	}
-
-	public void setItem(Item item) {
 		this.item = item;
 	}
 
